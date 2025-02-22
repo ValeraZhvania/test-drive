@@ -16,6 +16,8 @@
 
         .video-container {
             width: 80%;
+            max-width: 800px;  /* Maximum size for larger screens */
+            height: auto;
             position: relative;
             padding-bottom: 45%; /* 16:9 Aspect Ratio */
             background-color: #2b2d33;
@@ -30,19 +32,19 @@
             width: 100%;
             height: 100%;
             border: none;
-            object-fit: cover;
+            object-fit: contain; /* Ensures the video fits without stretching */
             object-position: center;
         }
 
         /* ლოგოს ღილაკი */
         .overlay {
             position: absolute;
-            top: 9px; /* ოდნავ ქვემოთ ჩამოვწიე */
+            top: 9px;
             right: 9px;
-            width: 110px; /* ლოგოს სიგანე */
+            width: 110px;
             height: auto;
             background: #2b2d33;
-            border-radius: 10px; /* ბორდერ-რადიუსი */
+            border-radius: 10px;
             z-index: 2;
             display: flex;
             justify-content: center;
@@ -56,11 +58,26 @@
             width: 100%;
             height: auto;
             object-fit: contain;
-            border-radius: 10px; /* სურათსაც დავუმატე რბილი კუთხეები */
+            border-radius: 10px;
         }
 
         .overlay:hover {
-            background: #5a5c66; /* ჰოვერის ეფექტი */
+            background: #5a5c66;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .video-container {
+                width: 80%; /* Same width as on desktop, but adjusted for smaller screens */
+                padding-bottom: 56.25%; /* Adjust for 16:9 ratio */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-container {
+                width: 90%; /* Slightly smaller for very small screens */
+                padding-bottom: 56.25%; /* Maintain aspect ratio */
+            }
         }
     </style>
 </head>
