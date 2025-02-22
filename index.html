@@ -58,6 +58,23 @@
             object-fit: contain;
             border-radius: 10px; /* სურათსაც დავუმატე რბილი კუთხეები */
         }
+      
+              /* მობილურისთვის ლოგოს შეცვლა */
+        @media (max-width: 768px) {
+            .overlay img {
+                content: url('https://cdn.valerazhvania.ge/wedding/mobile-logo.png'); /* მობილურისთვის სხვა ლოგო */
+                height: 35px;
+                width: 40px; /* მისი ზომა შეგიძლიათ შეცვალოთ */
+            }
+            .overlay {
+            position: absolute;
+            top: 9px; /* ოდნავ ქვემოთ ჩამოვწიე */
+            right: 9px;
+            width: 40px; /* ლოგოს სიგანე */
+            height: auto;
+            background: #2b2d33;
+            }
+        }
 
         .overlay:hover {
             background: #5a5c66; /* ჰოვერის ეფექტი */
